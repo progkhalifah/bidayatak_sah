@@ -6,6 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
 (function() {
   "use strict";
 
@@ -224,7 +225,7 @@
       arrows: false,
       dots: false,
       infinite: true,
-      rtl: true, // لو موقعك عربي
+      rtl: true,
       responsive: [
         {
           breakpoint: 1200,
@@ -246,37 +247,34 @@
     });
   });
 
-  (function(){
-    emailjs.init("YOUR_PUBLIC_KEY"); // استبدلها بـ public key من EmailJS
-  })();
 
-  const form = document.getElementById('contact-form');
-  const loading = form.querySelector('.loading');
-  const errorMessage = form.querySelector('.error-message');
-  const sentMessage = form.querySelector('.sent-message');
+  emailjs.init("4Kv5GN51ORHF3n13p"); // استبدل بـ Public Key من حسابك على EmailJS
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // منع الإرسال التقليدي
 
-    loading.style.display = 'block';
-    errorMessage.innerHTML = '';
-    sentMessage.style.display = 'none';
+      document.querySelector(".loading").style.display = "block";
+      document.querySelector(".sent-message").style.display = "none";
+      document.querySelector(".error-message").style.display = "none";
+
+      emailjs.sendForm("service_myod62k", "template_x4sa7vv", this)
+          .then(function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            document.querySelector(".loading").style.display = "none";
+            document.querySelector(".sent-message").style.display = "block";
+            contactForm.reset();
+          }, function (error) {
+            console.error("FAILED...", error);
+            document.querySelector(".loading").style.display = "none";
+            document.querySelector(".error-message").style.display = "block";
+            document.querySelector(".error-message").innerText = "فشل إرسال الرسالة. حاول مرة أخرى.";
+          });
+    });
+  }
 
 
-    emailjs.send('service_myod62k', 'template_x4sa7vv', {
-      from_name: form.name.value,
-      reply_to: form.email.value,
-      subject: form.subject.value,
-      message: form.message.value
-    })
-        .then(function() {
-          loading.style.display = 'none';
-          sentMessage.style.display = 'block';
-          form.reset();
-        }, function(error) {
-          loading.style.display = 'none';
-          errorMessage.innerHTML = "حدث خطأ أثناء الإرسال: " + JSON.stringify(error);
-        });
-  });
 
 })();
+
