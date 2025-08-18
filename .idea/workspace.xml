@@ -7,6 +7,7 @@
     <list default="true" id="b2643149-f5cd-4fd6-814b-44813252f4a1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/governments/absher-business1694937913.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -60,7 +61,10 @@
       <workItem from="1753383627874" duration="3483000" />
       <workItem from="1753639145347" duration="3620000" />
       <workItem from="1753643234604" duration="8958000" />
-      <workItem from="1754245082552" duration="7108000" />
+      <workItem from="1754245082552" duration="7735000" />
+      <workItem from="1754590178630" duration="2554000" />
+      <workItem from="1754931410339" duration="9103000" />
+      <workItem from="1755538860432" duration="2770000" />
     </task>
     <servers />
   </component>

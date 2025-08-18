@@ -248,7 +248,7 @@
   });
 
 
-  emailjs.init("4Kv5GN51ORHF3n13p"); // استبدل بـ Public Key من حسابك على EmailJS
+  emailjs.init("4Kv5GN51ORHF3n13p");
 
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
